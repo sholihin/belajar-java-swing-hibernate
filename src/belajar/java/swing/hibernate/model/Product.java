@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     
-    @Column(name = "barcode", length = 10, nullable = false)
+    @Column(unique = true, name = "barcode", length = 10, nullable = false)
     String barcode;
     
     @Column(length = 30, nullable = false)
